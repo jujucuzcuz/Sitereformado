@@ -50,7 +50,7 @@ const SocialProofNotification = () => {
 
   return (
     <div
-      className={`fixed bottom-4 left-4 z-40 max-w-xs transform transition-all duration-500 ease-out ${
+      className={`fixed bottom-20 md:bottom-4 left-4 z-40 max-w-xs transform transition-all duration-500 ease-out ${
         isVisible
           ? "translate-x-0 opacity-100"
           : "-translate-x-full opacity-0"
