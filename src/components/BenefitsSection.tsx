@@ -51,6 +51,18 @@ const BenefitsSection = () => {
           ))}
         </div>
 
+        {/* Bloco: Não é curso */}
+        <AnimatedSection animation="up" delay={400}>
+          <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 max-w-3xl mx-auto mb-12 lg:mb-16">
+            <p className="text-sm font-bold text-foreground mb-2">
+              📱 Aplicativo Prático (Acesso Vitalício — Sem Mensalidades)
+            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Isso <strong className="text-foreground">NÃO é um curso</strong> com videoaulas longas que você não tem tempo de assistir. O NutriBebê Pro é um aplicativo direto ao ponto: você abre, escolhe a idade do seu bebê e vê na hora o cardápio, os cortes seguros e as receitas do dia. Pago uma única vez, seu para sempre.
+            </p>
+          </div>
+        </AnimatedSection>
+
         {/* Veggies Image */}
         <AnimatedSection animation="scale">
           <div className="relative max-w-3xl mx-auto">

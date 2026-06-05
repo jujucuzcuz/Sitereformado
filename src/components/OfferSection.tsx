@@ -9,7 +9,7 @@ const CYCLE_SECONDS = 2 * 3600 + 47 * 60 + 33;
 const includes = [
   "Acesso imediato ao app completo",
   "Atualizações inclusas para sempre",
-  "Garantia incondicional de 7 dias",
+  "Garantia incondicional de 30 dias",
 ];
 
 export const OfferSection = () => {

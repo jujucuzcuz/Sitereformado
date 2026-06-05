@@ -10,7 +10,7 @@ export const GuaranteeSection = () => {
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary/40 via-primary to-primary/40" />
           <ShieldCheck className="w-20 h-20 text-primary mx-auto mb-5" />
           <h2 className="text-2xl md:text-3xl font-black mb-4 text-foreground">
-            Teste por 7 dias. Sem risco nenhum.
+            Garantia Incondicional de 30 Dias
           </h2>
           <p className="text-muted-foreground mb-2 text-lg leading-relaxed max-w-xl mx-auto">
             Se você não ficar <strong className="text-foreground">100% satisfeita</strong> e segura na introdução alimentar, devolvemos{" "}
@@ -45,7 +45,7 @@ export const GuaranteeSection = () => {
             <ArrowRight className="w-5 h-5" />
           </button>
           <p className="mt-4 text-xs text-muted-foreground italic">
-            🔒 Compra segura · Acesso imediato · Garantia de 7 dias
+            🔒 Compra segura · Acesso imediato · Garantia de 30 dias
           </p>
         </div>
       </div>

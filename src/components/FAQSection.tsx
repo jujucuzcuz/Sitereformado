@@ -20,7 +20,7 @@ const FAQSection = () => {
     },
     {
       q: "Tem garantia?",
-      a: "Com certeza! Oferecemos 7 dias de garantia incondicional. Se não gostar, devolvemos 100% do seu dinheiro.",
+      a: "Com certeza! Oferecemos 30 dias de garantia incondicional. Se não gostar, devolvemos 100% do seu dinheiro.",
     },
   ];
 

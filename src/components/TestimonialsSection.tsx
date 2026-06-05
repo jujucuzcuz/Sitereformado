@@ -26,6 +26,27 @@ const testimonials = [
     after: "Agora a Luna come comida caseira todos os dias. A lista de alimentos proibidos me salvou!",
     image: testimonialJuliana,
   },
+  {
+    name: "Mariana Rocha",
+    babyAge: "Mãe do Léo, 7 meses",
+    before: "Eu ficava horas na cozinha tentando planejar o que fazer e acabava jogando muita comida fora porque o Léo não aceitava. Ficava frustrada e exausta.",
+    after: "O cronograma passo a passo mudou tudo. Em minutos eu já sei exatamente o que colocar no prato dele de forma nutritiva. O Léo limpou o prato hoje!",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200&h=200",
+  },
+  {
+    name: "Beatriz Lima",
+    babyAge: "Mãe do Arthur, 6 meses",
+    before: "Tinha pânico de dar pedaços inteiros e o Arthur engasgar. Só de pensar meu coração disparava, então eu vivia presa nas papinhas batidas.",
+    after: "O aplicativo me deu a segurança que eu precisava. Aprendi os cortes corretos e seguros. Ver ele pegando os alimentos sozinho e comendo sem medo é um alívio enorme!",
+    image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&q=80&w=200&h=200",
+  },
+  {
+    name: "Amanda Vieira",
+    babyAge: "Mãe da Manuela, 10 meses",
+    before: "Todo mundo dava um palpite diferente: minha mãe dizia uma coisa, a sogra outra. Eu me sentia perdida e com medo de estar alimentando minha filha errado.",
+    after: "Agora eu sigo o NutriBebê Pro e tenho uma direção clara e profissional. Não sigo mais palpites, sigo o método que funciona. Minha filha está super saudável!",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200&h=200",
+  },
 ];
 
 const TestimonialsSection = () => {
