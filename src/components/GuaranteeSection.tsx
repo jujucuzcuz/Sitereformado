@@ -45,7 +45,7 @@ export const GuaranteeSection = () => {
             <ArrowRight className="w-5 h-5" />
           </button>
           <p className="mt-4 text-xs text-muted-foreground italic">
-            🔒 Compra segura · Acesso imediato · Garantia de 7 dias
+            🔒 Compra segura · Acesso imediato · Garantia de 30 dias
           </p>
         </div>
       </div>
