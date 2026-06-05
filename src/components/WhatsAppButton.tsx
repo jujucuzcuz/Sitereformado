@@ -19,7 +19,7 @@ const WhatsAppButton = () => {
       target="_blank"
       rel="noopener noreferrer"
       onClick={handleClick}
-      className="floating-button bottom-6 right-6 bg-[#25D366] hover:bg-[#20BA5C]"
+      className="floating-button bottom-24 right-4 md:bottom-6 md:right-6 z-50 bg-[#25D366] hover:bg-[#20BA5C]"
       aria-label="Contato via WhatsApp"
     >
       <MessageCircle className="w-7 h-7 text-white" fill="white" />
