@@ -64,8 +64,18 @@ export const Hero = () => {
                 <span className="text-primary">(Acesso Vitalício)</span>
               </p>
               <p className="mt-1 text-xs text-muted-foreground italic">
-                🔒 Compra segura · Acesso imediato · Garantia de 7 dias
+                🔒 Compra segura · Acesso imediato · Garantia de 30 dias
               </p>
+
+              {/* Bloco: Não é curso */}
+              <div className="mt-6 bg-primary/5 border border-primary/20 rounded-2xl p-5">
+                <p className="text-sm font-bold text-foreground mb-2">
+                  📱 Aplicativo Prático (Acesso Vitalício — Sem Mensalidades)
+                </p>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Isso <strong className="text-foreground">NÃO é um curso</strong> com videoaulas longas que você não tem tempo de assistir. O NutriBebê Pro é um aplicativo direto ao ponto: você abre, escolhe a idade do seu bebê e vê na hora o cardápio, os cortes seguros e as receitas do dia. Pago uma única vez, seu para sempre.
+                </p>
+              </div>
             </div>
           </div>
           <div className="w-full lg:w-1/2 px-4 flex justify-center">
