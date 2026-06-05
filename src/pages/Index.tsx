@@ -17,7 +17,22 @@ import MobileStickyBuy from "@/components/MobileStickyBuy";
 
 const Index = () => {
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
+    // IMPORTANTE: preservar case do fbclid -> NÃO usar toLowerCase nem transformações.
+    const rawSearch = window.location.search.startsWith("?")
+      ? window.location.search.slice(1)
+      : window.location.search;
+
+    // Parse manual para preservar exatamente o valor original do fbclid (case-sensitive)
+    let rawFbclid = "";
+    rawSearch.split("&").forEach((pair) => {
+      const eqIdx = pair.indexOf("=");
+      if (eqIdx === -1) return;
+      const k = decodeURIComponent(pair.slice(0, eqIdx));
+      const v = pair.slice(eqIdx + 1); // sem decodeURIComponent para não alterar
+      if (k === "fbclid" && v) rawFbclid = v;
+    });
+
+    const params = new URLSearchParams(rawSearch);
 
     // 1. PERSISTÊNCIA DE UTMs (sessionStorage + localStorage)
     const utmKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "src"];
@@ -32,6 +47,14 @@ const Index = () => {
       savedParams[key] = sessionStorage.getItem(`nb_${key}`) || localStorage.getItem(`nb_${key}`) || "";
     });
 
+    // 1b. CAPTURA fbclid -> fbc (preservando case original, sem truncar)
+    if (rawFbclid) {
+      const fbc = `fb.1.${Date.now()}.${rawFbclid}`;
+      localStorage.setItem("nb_fbc", fbc);
+      // grava cookie _fbc para o Pixel reaproveitar
+      document.cookie = `_fbc=${fbc}; path=/; max-age=${60 * 60 * 24 * 90}`;
+    }
+
     // 2. META PIXEL - PageView
     if (typeof window !== "undefined" && (window as any).fbq) {
       (window as any).fbq("track", "PageView", {
@@ -39,6 +62,7 @@ const Index = () => {
         page_title: document.title,
       });
     }
+
 
     // 3. SCROLL ENGAGEMENT - ViewContent ao atingir 50%
     let viewContentFired = false;

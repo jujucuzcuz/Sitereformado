@@ -5,7 +5,7 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
-// Função para criptografar dados para o Facebook (SHA256)
+// SHA256 para parâmetros de usuário do Facebook CAPI
 async function hashData(data: string) {
   if (!data) return null;
   const msgUint8 = new TextEncoder().encode(data.trim().toLowerCase());
@@ -21,32 +21,44 @@ Deno.serve(async (req) => {
     const order = body.order || {};
     const customer = order.Customer || {};
     const product = order.Product || {};
-    
+    const tracking = order.TrackingParameters || {};
+
     const rawMobile = customer.mobile || "";
     const cleanPhone = rawMobile.toString().replace(/\D/g, "");
     const email = customer.email || "";
+
+    // event_id propagado do client-side via s1 (mesmo id usado no fbq do Pixel -> dedupe)
+    // Fallback: usa order_id quando o tracking parameter não veio (ex.: compras sem clique rastreado)
+    const clientEventId = (tracking.s1 || "").toString();
+    const eventId = clientEventId || `kiwify_${order.order_id || crypto.randomUUID()}`;
+
+    // fbc preservando case original (vem do client via s2)
+    const fbc = (tracking.s2 || "").toString();
+    const fbp = (tracking.s3 || "").toString();
 
     const supabase = createClient(
       Deno.env.get("SUPABASE_URL")!,
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
     );
 
-    // 1. SALVAR NO SUPABASE (Com colunas organizadas)
+    // 1. SALVAR NO SUPABASE
     await supabase.from("leads_tracking").insert({
       event_type: `kiwify_${order.order_status}`,
-      utm_source: order.TrackingParameters?.utm_source || "",
+      utm_source: tracking.utm_source || "",
       whatsapp_lead: cleanPhone || null,
       metadata: {
         customer_name: customer.full_name || "",
         customer_email: email || "",
         product_name: product.product_name || "",
         order_id: order.order_id || "",
-        status: order.order_status || ""
+        status: order.order_status || "",
+        event_id: eventId,
+        fbc: fbc || null,
+        fbp: fbp || null,
       },
     });
 
-    // 2. LOGICA DE EVENTO PARA O FACEBOOK
-    // Se for aprovado, envia "Purchase". Se for boleto/pix gerado, "InitiateCheckout".
+    // 2. EVENTO PARA O FACEBOOK CAPI
     let fbEventName = "InitiateCheckout";
     if (order.order_status === "paid" || order.order_status === "approved") {
       fbEventName = "Purchase";
@@ -60,6 +72,12 @@ Deno.serve(async (req) => {
       const hashedPhone = await hashData(cleanPhone);
       const value = (order.Commissions?.charge_amount || 0) / 100;
 
+      const userData: Record<string, unknown> = {};
+      if (hashedEmail) userData.em = [hashedEmail];
+      if (hashedPhone) userData.ph = [hashedPhone];
+      if (fbc) userData.fbc = fbc; // case original preservado, sem truncar
+      if (fbp) userData.fbp = fbp;
+
       await fetch(`https://graph.facebook.com/v18.0/${FB_PIXEL_ID}/events`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -67,12 +85,9 @@ Deno.serve(async (req) => {
           data: [{
             event_name: fbEventName,
             event_time: Math.floor(Date.now() / 1000),
-            event_id: order.order_id,
-            action_source: "system_generated",
-            user_data: {
-              em: [hashedEmail],
-              ph: [hashedPhone],
-            },
+            event_id: eventId, // MESMO id do Pixel -> dedupe
+            action_source: "website",
+            user_data: userData,
             custom_data: {
               value: value,
               currency: "BRL",
@@ -84,7 +99,7 @@ Deno.serve(async (req) => {
       });
     }
 
-    return new Response(JSON.stringify({ success: true }), { headers: { ...corsHeaders, "Content-Type": "application/json" } });
+    return new Response(JSON.stringify({ success: true, event_id: eventId }), { headers: { ...corsHeaders, "Content-Type": "application/json" } });
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : "Unknown error";
     console.error("Erro no Webhook:", message);
