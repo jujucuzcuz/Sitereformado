@@ -1,5 +1,5 @@
 import { ArrowRight, Shield, Salad, Smartphone } from "lucide-react";
-import heroBaby from "@/assets/hero-baby.jpg";
+import heroMockup from "@/assets/hero-mockup-baby.png";
 import { openCheckout } from "@/lib/checkout";
 
 const securityFeatures = [
