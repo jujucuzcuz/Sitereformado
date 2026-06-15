@@ -6,7 +6,6 @@ import AppPreviewSection from "@/components/AppPreviewSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ValueAnchorSection from "@/components/ValueAnchorSection";
 import FAQSection from "@/components/FAQSection";
-import OfferSection from "@/components/OfferSection";
 import BonusSection from "@/components/BonusSection";
 import GuaranteeSection from "@/components/GuaranteeSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -155,7 +154,6 @@ const Index = () => {
       <AppPreviewSection />
       <TestimonialsSection />
       <ValueAnchorSection />
-      <OfferSection />
       <BonusSection />
       <FAQSection />
       <GuaranteeSection />
