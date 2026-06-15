@@ -41,7 +41,7 @@ export const GuaranteeSection = () => {
             className="animate-cta-pulse w-full max-w-md text-cta-foreground font-black py-5 px-8 rounded-2xl hover:scale-105 transition-transform text-lg inline-flex items-center justify-center gap-2 mx-auto"
             style={{ background: "var(--gradient-cta)", boxShadow: "var(--shadow-cta)" }}
           >
-            QUERO PROTEGER MEU BEBÊ AGORA
+            QUERO ACESSO IMEDIATO AO APP
             <ArrowRight className="w-5 h-5" />
           </button>
           <p className="mt-4 text-xs text-muted-foreground italic">

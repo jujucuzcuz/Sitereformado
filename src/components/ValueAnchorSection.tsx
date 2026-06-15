@@ -46,7 +46,7 @@ const ValueAnchorSection = () => {
               className="inline-flex items-center justify-center px-8 py-4 text-white font-bold rounded-xl hover:scale-105 transition-transform text-lg"
               style={{ background: "var(--gradient-cta)", boxShadow: "var(--shadow-cta)" }}
             >
-              QUERO PROTEGER MEU BEBÊ AGORA
+              QUERO ACESSO IMEDIATO AO APP
               <ArrowRight className="ml-2 w-5 h-5" />
             </button>
           </div>

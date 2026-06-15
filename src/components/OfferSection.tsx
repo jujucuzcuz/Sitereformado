@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Progress } from "@/components/ui/progress";
 import { Clock, Check, ArrowRight } from "lucide-react";
-import heroBaby from "@/assets/hero-baby.jpg";
+
 import { openCheckout } from "@/lib/checkout";
 
 const CYCLE_SECONDS = 2 * 3600 + 47 * 60 + 33;
@@ -69,16 +69,8 @@ export const OfferSection = () => {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center gap-12">
-          <div className="w-full lg:w-1/2 flex justify-center">
-            <img
-              src={heroBaby}
-              alt="Bebê comendo de forma saudável"
-              className="rounded-[2.5rem] shadow-2xl border-[10px] border-white max-w-xs rotate-3 hover:rotate-0 transition-transform duration-500"
-            />
-          </div>
-
-          <div className="w-full lg:w-1/2 text-center lg:text-left">
+        <div className="flex flex-col items-center gap-12">
+          <div className="w-full max-w-2xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-black mb-2 text-foreground">
               Comece hoje por apenas
             </h2>
