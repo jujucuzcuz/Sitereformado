@@ -95,7 +95,7 @@ const BonusSection = () => {
               className="inline-block w-full max-w-md text-white font-black py-5 px-10 rounded-2xl hover:scale-105 transition-transform text-xl"
               style={{ background: 'var(--gradient-cta)', boxShadow: 'var(--shadow-cta)' }}
             >
-              QUERO O APP + BÔNUS AGORA
+              QUERO ACESSO IMEDIATO AO APP
             </button>
           </div>
         </AnimatedSection>

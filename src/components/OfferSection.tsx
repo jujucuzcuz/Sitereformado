@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Progress } from "@/components/ui/progress";
 import { Clock, Check, ArrowRight } from "lucide-react";
-import heroBaby from "@/assets/hero-baby.jpg";
+
 import { openCheckout } from "@/lib/checkout";
 
 const CYCLE_SECONDS = 2 * 3600 + 47 * 60 + 33;
