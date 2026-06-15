@@ -22,14 +22,11 @@ export const Hero = () => {
 
               {/* Headline */}
               <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-black mb-5 text-foreground leading-[1.15]">
-                Seu bebê vai começar a comer e você{" "}
-                <span className="text-primary">morre de medo de engasgo?</span>
+                O Guia Completo de Introdução Alimentar na Palma da Sua Mão
               </h1>
 
               <p className="text-lg text-muted-foreground mb-6 font-medium leading-relaxed">
-                Saiba exatamente o que colocar no prato do seu bebê com{" "}
-                <strong className="text-foreground">segurança e confiança</strong>
-                , mesmo que nunca tenha feito introdução alimentar antes.
+                Garanta mais de 100 receitas saudáveis, menus diários e a segurança que você precisa para o seu bebê comer bem, direto no seu celular.
               </p>
 
               {/* Security Icons Grid */}
