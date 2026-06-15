@@ -155,7 +155,6 @@ const Index = () => {
       <AppPreviewSection />
       <TestimonialsSection />
       <ValueAnchorSection />
-      <OfferSection />
       <BonusSection />
       <FAQSection />
       <GuaranteeSection />
