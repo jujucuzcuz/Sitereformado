@@ -77,9 +77,9 @@ export const Hero = () => {
           </div>
           <div className="w-full lg:w-1/2 px-4 flex justify-center">
             <img
-              src={heroBaby}
-              alt="Bebê comendo de forma saudável durante introdução alimentar"
-              className="rounded-3xl shadow-xl max-w-sm w-full object-cover"
+              src={heroMockup}
+              alt="Aplicativo NutriBebê Pro no celular com receitas saudáveis para bebês"
+              className="max-w-sm w-full object-contain drop-shadow-xl"
             />
           </div>
         </div>
