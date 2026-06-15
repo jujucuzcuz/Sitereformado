@@ -1,5 +1,5 @@
 import { ArrowRight, Shield, Salad, Smartphone } from "lucide-react";
-import heroBaby from "@/assets/hero-baby.jpg";
+import heroMockup from "@/assets/hero-mockup-baby.png";
 import { openCheckout } from "@/lib/checkout";
 
 const securityFeatures = [
@@ -77,9 +77,9 @@ export const Hero = () => {
           </div>
           <div className="w-full lg:w-1/2 px-4 flex justify-center">
             <img
-              src={heroBaby}
-              alt="Bebê comendo de forma saudável durante introdução alimentar"
-              className="rounded-3xl shadow-xl max-w-sm w-full object-cover"
+              src={heroMockup}
+              alt="Aplicativo NutriBebê Pro no celular com receitas saudáveis para bebês"
+              className="max-w-sm w-full object-contain drop-shadow-xl"
             />
           </div>
         </div>
