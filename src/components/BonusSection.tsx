@@ -92,7 +92,7 @@ const BonusSection = () => {
             </p>
             <button
               onClick={openCheckout}
-              className="inline-block w-full max-w-md text-white font-black py-5 px-10 rounded-2xl hover:scale-105 transition-transform text-xl"
+              className="animate-cta-pulse inline-block w-full max-w-md text-white font-black py-5 px-10 rounded-2xl hover:scale-105 transition-transform text-xl"
               style={{ background: 'var(--gradient-cta)', boxShadow: 'var(--shadow-cta)' }}
             >
               QUERO ACESSO IMEDIATO AO APP

@@ -25,7 +25,7 @@ export const Hero = () => {
                 O Guia Completo de Introdução Alimentar na Palma da Sua Mão
               </h1>
 
-              <p className="text-lg text-muted-foreground mb-6 font-medium leading-relaxed">
+              <p className="text-lg text-foreground/90 mb-6 font-semibold leading-relaxed">
                 Garanta mais de 100 receitas saudáveis, menus diários e a segurança que você precisa para o seu bebê comer bem, direto no seu celular.
               </p>
 
@@ -69,7 +69,7 @@ export const Hero = () => {
                 <p className="text-sm font-bold text-foreground mb-2">
                   📱 Aplicativo Prático (Acesso Vitalício — Sem Mensalidades)
                 </p>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-sm text-foreground/80 leading-relaxed">
                   Isso <strong className="text-foreground">NÃO é um curso</strong> com videoaulas longas que você não tem tempo de assistir. O NutriBebê Pro é um aplicativo direto ao ponto: você abre, escolhe a idade do seu bebê e vê na hora o cardápio, os cortes seguros e as receitas do dia. Pago uma única vez, seu para sempre.
                 </p>
               </div>

@@ -43,7 +43,7 @@ const ValueAnchorSection = () => {
             </p>
             <button
               onClick={openCheckout}
-              className="inline-flex items-center justify-center px-8 py-4 text-white font-bold rounded-xl hover:scale-105 transition-transform text-lg"
+              className="animate-cta-pulse inline-flex items-center justify-center px-8 py-4 text-white font-bold rounded-xl hover:scale-105 transition-transform text-lg"
               style={{ background: "var(--gradient-cta)", boxShadow: "var(--shadow-cta)" }}
             >
               QUERO ACESSO IMEDIATO AO APP
