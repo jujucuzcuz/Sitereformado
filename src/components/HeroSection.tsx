@@ -25,7 +25,7 @@ export const Hero = () => {
                 O Guia Completo de Introdução Alimentar na Palma da Sua Mão
               </h1>
 
-              <p className="text-lg text-muted-foreground mb-6 font-medium leading-relaxed">
+              <p className="text-lg text-foreground/90 mb-6 font-semibold leading-relaxed">
                 Garanta mais de 100 receitas saudáveis, menus diários e a segurança que você precisa para o seu bebê comer bem, direto no seu celular.
               </p>
 
