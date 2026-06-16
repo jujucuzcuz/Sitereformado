@@ -71,9 +71,9 @@ const TestimonialsSection = () => {
           {testimonials.map((t, index) => (
             <AnimatedSection key={index} animation="up" delay={index * 150}>
               <div className="bg-card rounded-2xl p-6 shadow-lg border border-border h-full flex flex-col">
-                <div className="flex gap-1 mb-4">
+                <div className="flex justify-center gap-1 mb-5">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400 drop-shadow-sm" />
                   ))}
                 </div>
 
