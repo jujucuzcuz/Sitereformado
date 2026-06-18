@@ -11,9 +11,9 @@ const securityFeatures = [
 export const Hero = () => {
   return (
     <section className="relative pt-20 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
-      <div className="container px-4 mx-auto">
-        <div className="flex flex-wrap items-center -mx-4">
-          <div className="w-full lg:w-1/2 px-4 mb-12 lg:mb-0">
+      <div className="container px-4 sm:px-6 mx-auto">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+          <div className="w-full lg:w-1/2">
             <div className="max-w-lg lg:max-w-md mx-auto lg:mx-0">
               {/* Badge */}
               <span className="inline-block bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-semibold mb-5">
@@ -21,11 +21,11 @@ export const Hero = () => {
               </span>
 
               {/* Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-black mb-5 text-foreground leading-[1.15]">
+              <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-black mb-6 text-foreground leading-[1.15]">
                 O Guia Completo de Introdução Alimentar na Palma da Sua Mão
               </h1>
 
-              <p className="text-lg text-foreground/90 mb-6 font-semibold leading-relaxed">
+              <p className="text-lg text-foreground/90 mb-8 font-semibold leading-relaxed">
                 Garanta mais de 100 receitas saudáveis, menus diários e a segurança que você precisa para o seu bebê comer bem, direto no seu celular.
               </p>
 
@@ -56,16 +56,16 @@ export const Hero = () => {
               </button>
 
               {/* Scarcity + Value */}
-              <p className="mt-4 text-sm text-foreground font-semibold">
+              <p className="mt-5 text-sm text-foreground font-semibold">
                 🔥 Oferta válida apenas para os próximos 50 acessos{" "}
-                <span className="text-primary">(Acesso Vitalício)</span>
+                <span className="text-primary">(Acesso Vital signs)</span>
               </p>
-              <p className="mt-1 text-xs text-muted-foreground italic">
+              <p className="mt-2 text-xs text-muted-foreground italic">
                 🔒 Compra segura · Acesso imediato · Garantia de 30 dias
               </p>
 
               {/* Bloco: Não é curso */}
-              <div className="mt-6 bg-primary/5 border border-primary/20 rounded-2xl p-5">
+              <div className="mt-8 bg-primary/5 border border-primary/20 rounded-2xl p-5">
                 <p className="text-sm font-bold text-foreground mb-2">
                   📱 Aplicativo Prático (Acesso Vitalício — Sem Mensalidades)
                 </p>
@@ -77,9 +77,9 @@ export const Hero = () => {
           </div>
           <div className="w-full lg:w-1/2 flex justify-center items-center">
             <img
-              src={heroMockup}
-              alt="Aplicativo NutriBebê Pro no celular com receitas saudáveis para bebês"
-              className="w-full max-w-[420px] lg:max-w-[580px] object-contain drop-shadow-2xl"
+              src={heroBaby.url}
+              alt="Bebê sorrindo comendo frutas saudáveis na cadeirinha"
+              className="w-full max-w-[300px] sm:max-w-[360px] lg:max-w-[440px] object-contain rounded-3xl shadow-xl"
             />
           </div>
         </div>
