@@ -32,13 +32,13 @@ export const GuaranteeSection = () => {
           </div>
         </div>
 
-        <div className="text-center">
+        <div className="flex flex-col items-center text-center">
           <h3 className="text-2xl font-black mb-6 text-foreground">
             Pronta para começar a introdução alimentar com segurança?
           </h3>
           <button
             onClick={openCheckout}
-            className="animate-cta-pulse w-full max-w-md text-cta-foreground font-black py-5 px-8 rounded-2xl hover:scale-105 transition-transform text-lg inline-flex items-center justify-center gap-2 mx-auto"
+            className="animate-cta-pulse w-full max-w-md text-cta-foreground font-black py-5 px-8 rounded-2xl hover:scale-105 transition-transform text-lg inline-flex items-center justify-center gap-2"
             style={{ background: "var(--gradient-cta)", boxShadow: "var(--shadow-cta)" }}
           >
             QUERO ACESSO IMEDIATO AO APP
