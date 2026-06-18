@@ -58,7 +58,7 @@ export const Hero = () => {
               {/* Scarcity + Value */}
               <p className="mt-5 text-sm text-foreground font-semibold">
                 🔥 Oferta válida apenas para os próximos 50 acessos{" "}
-                <span className="text-primary">(Acesso Vital signs)</span>
+                <span className="text-primary">(Acesso Vitalício)</span>
               </p>
               <p className="mt-2 text-xs text-muted-foreground italic">
                 🔒 Compra segura · Acesso imediato · Garantia de 30 dias
