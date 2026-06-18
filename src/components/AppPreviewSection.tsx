@@ -47,10 +47,10 @@ const AppPreviewSection = () => {
         </AnimatedSection>
 
         <AnimatedSection animation="scale">
-          <div className="relative max-w-lg lg:max-w-xl mx-auto">
-            {/* Tablet frame */}
-            <div className="relative bg-foreground rounded-[1.5rem] p-2.5 shadow-2xl">
-              <div className="bg-card rounded-[1.2rem] overflow-hidden">
+          <div className="relative max-w-[260px] sm:max-w-lg lg:max-w-xl mx-auto">
+            {/* Phone/Tablet frame */}
+            <div className="relative bg-foreground rounded-[2.5rem] sm:rounded-[1.5rem] p-3 sm:p-2.5 shadow-2xl">
+              <div className="bg-card rounded-[2rem] sm:rounded-[1.2rem] overflow-hidden">
                 <img
                   src={screen.image}
                   alt={screen.title}
@@ -68,13 +68,13 @@ const AppPreviewSection = () => {
             {/* Navigation buttons */}
             <button
               onClick={prev}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 sm:-translate-x-14 w-10 h-10 rounded-full bg-card shadow-md flex items-center justify-center hover:scale-110 transition-transform"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-10 sm:-translate-x-14 w-10 h-10 rounded-full bg-card shadow-md flex items-center justify-center hover:scale-110 transition-transform"
             >
               <ChevronLeft className="w-5 h-5 text-foreground" />
             </button>
             <button
               onClick={next}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 sm:translate-x-14 w-10 h-10 rounded-full bg-card shadow-md flex items-center justify-center hover:scale-110 transition-transform"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-10 sm:translate-x-14 w-10 h-10 rounded-full bg-card shadow-md flex items-center justify-center hover:scale-110 transition-transform"
             >
               <ChevronRight className="w-5 h-5 text-foreground" />
             </button>
