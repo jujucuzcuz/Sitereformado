@@ -1,5 +1,5 @@
 import { ArrowRight, Shield, Salad, Smartphone } from "lucide-react";
-import heroBaby from "@/assets/hero-baby.jpg.asset.json";
+// Local public asset: /hero-baby.jpg
 import { openCheckout } from "@/lib/checkout";
 
 const securityFeatures = [
@@ -77,7 +77,7 @@ export const Hero = () => {
           </div>
           <div className="w-full lg:w-1/2 flex justify-center items-center">
             <img
-              src={heroBaby.url}
+              src="/hero-baby.jpg"
               alt="Bebê sorrindo comendo frutas saudáveis na cadeirinha"
               className="w-full max-w-[300px] sm:max-w-[360px] lg:max-w-[440px] object-contain rounded-3xl shadow-xl"
             />
