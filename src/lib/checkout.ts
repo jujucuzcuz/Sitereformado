@@ -1,3 +1,8 @@
+# Correção final — src/lib/checkout.ts
+
+## Código completo para copiar e colar (substitui o arquivo inteiro)
+
+```ts
 const KIWIFY_URL = "https://pay.kiwify.com.br/vrYjxFv";
 const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "src"];
 function generateEventId() {
@@ -29,7 +34,7 @@ export function openCheckout() {
     const fbqParams: Record<string, any> = {
       value: 29.9,
       currency: "BRL",
-      content_name: "NutriBebê Pro",
+      content_name: "eBook Toalhas dos Sonhos",
     };
     if (fbc) fbqParams.fbc = fbc;
     if (fbp) fbqParams.fbp = fbp;
@@ -43,3 +48,43 @@ export function openCheckout() {
   }
   window.open(url.toString(), "_blank");
 }
+```
+
+## O que mudou em relação à versão anterior
+
+- `content_name: "NutriBebê Pro"` → `content_name: "eBook Toalhas dos Sonhos"`
+  (corrige o nome do produto, que estava com um placeholder de outro projeto)
+- `fbc` e `fbp` continuam sendo adicionados condicionalmente ao objeto `fbqParams`
+  antes do disparo do evento (essa parte já estava certa no commit anterior)
+
+## Como aplicar
+
+1. Abra `src/lib/checkout.ts` no GitHub
+2. Clique no ícone de lápis (editar)
+3. Selecione todo o conteúdo do arquivo e substitua pelo código acima
+4. Commit direto na branch main (mensagem sugerida: "Corrige content_name e garante
+   publicação de fbc/fbp no InitiateCheckout")
+5. **Importante:** depois do commit, vá no painel do Lovable e confirme que o
+   "Publish" foi feito — não basta o commit existir no GitHub, é preciso publicar
+   de fato (foi isso que causou a confusão anterior)
+
+## Como testar depois
+
+1. Acesse `https://toalha-dos-sonhos.lovable.app/?fbclid=tesfinal000` com
+   recarregamento forçado (Ctrl+Shift+R)
+2. Abra o Console do navegador (F12 → Console) e cole:
+   ```js
+   const originalFbq = window.fbq;
+   window.fbq = function(...args) {
+     console.log('FBQ CHAMADO:', JSON.stringify(args));
+     return originalFbq.apply(this, args);
+   };
+   ```
+3. Clique no botão de comprar
+4. No log que aparecer, confirme:
+   - `content_name: "eBook Toalhas dos Sonhos"` (nome corrigido)
+   - `fbc` e `fbp` presentes no objeto (não apenas `value` e `currency`)
+5. Se tudo aparecer certo nesse log direto do navegador, a correção está completa
+   e funcionando — não é mais necessário verificar no Gerenciador de Eventos do
+   Meta para confirmar essa parte específica, já que o log mostra exatamente o
+   que está sendo enviado.
